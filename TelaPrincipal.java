@@ -33,8 +33,8 @@ public class TelaPrincipal extends JFrame implements KeyListener {
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setTitle("Trabalho 3 - POO");
-        this.setSize(500, 500);
-        this.setResizable(false);
+        this.setSize(600, 600);
+        this.setResizable(true);
         this.setVisible(true);
 
         attQuadradoSelecionado();
@@ -49,8 +49,6 @@ public class TelaPrincipal extends JFrame implements KeyListener {
         }
         // Marca o quadrado atual
         ((Desenho) quadrados[posXAV][posYAV]).setSelecionado(true);
-        // Solicita o redesenho dos painéis afetados
-        quadrados[posXAV][posYAV].repaint();
     }
 
     @Override
@@ -83,7 +81,6 @@ public class TelaPrincipal extends JFrame implements KeyListener {
             }
         }
         if(e.getKeyCode() == KeyEvent.VK_1){
-            //System.out.println("x: " + posXAV + " y: " + posYAV + "\nBloco: h-" + BlocoTipo.BLOCO1.getImg().getHeight(this) + " w-" + BlocoTipo.BLOCO1.getImg().getWidth(this));
             if(posXAV < tamTabuleiro - 1){
                 posXAV++;
             }else{
